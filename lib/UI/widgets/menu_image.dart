@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:menu_web/widgets/show_image_dialog.dart';
+import 'package:menu_web/UI/widgets/show_image_dialog.dart';
 
 class MenuImage extends StatelessWidget {
   final String? url;

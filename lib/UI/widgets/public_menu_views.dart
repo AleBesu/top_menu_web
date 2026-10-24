@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:menu_web/core/enum/menu_layout_mode.dart';
+import 'package:menu_web/core/models/menu_category.dart';
+import 'package:menu_web/core/models/product.dart';
 
-import '../core/models/public_menu.dart';
+import '../../core/models/public_menu.dart';
 import 'menu_image.dart';
 
 String displayPrice(String raw) {
@@ -10,7 +13,7 @@ String displayPrice(String raw) {
 
 class PublicMenuViews extends StatelessWidget {
   final List<MenuCategory> categories;
-  final MenuViewMode mode;
+  final MenuLayoutMode mode;
   const PublicMenuViews({
     super.key,
     required this.categories,
@@ -44,12 +47,12 @@ class PublicMenuViews extends StatelessWidget {
               ),
             ),
           ),
-          if (mode == MenuViewMode.list)
+          if (mode == MenuLayoutMode.list)
             ...c.products.map((p) => _ListTile(product: p)),
-          if (mode == MenuViewMode.cards)
+          if (mode == MenuLayoutMode.cards)
             ...c.products.map((p) => _CardTile(product: p)),
-          if (mode == MenuViewMode.classic) _ClassicCategory(category: c),
-          if (mode == MenuViewMode.grid)
+          if (mode == MenuLayoutMode.classic) _ClassicCategory(category: c),
+          if (mode == MenuLayoutMode.grid)
             LayoutBuilder(
               builder: (context, constraints) {
                 final count = constraints.maxWidth > 800
@@ -140,7 +143,7 @@ class _CardTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Card(
     clipBehavior: Clip.antiAlias,
-    margin: const EdgeInsets.only(bottom: 16),
+    margin: const EdgeInsets.only(bottom: 20),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

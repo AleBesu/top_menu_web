@@ -12,6 +12,7 @@ Future<void> showImageDialog(
       child: ClipRRect(
         borderRadius: BorderRadiusGeometry.circular(12),
         child: Image(
+          fit: BoxFit.cover,
           width: size.width * 0.8,
           height: size.width * 0.8,
           image: image,
