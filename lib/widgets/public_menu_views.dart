@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/public_menu.dart';
+import '../core/models/public_menu.dart';
 import 'menu_image.dart';
 
 String displayPrice(String raw) {

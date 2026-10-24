@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:menu_web/repositorys/public_menu_repository.dart';
+import 'package:menu_web/core/repositorys/public_menu_repository.dart';
 
-import '../models/public_menu.dart';
+import '../core/models/public_menu.dart';
 
 import 'package:flutter/material.dart';
 
